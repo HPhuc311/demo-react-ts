@@ -1,13 +1,13 @@
-interface IProps {
-    todos: {
-        id: number;
-        title: string;
-        isComplete: boolean
-    }[];
-    owner: string;
-    age: number;
-    isDeveloper: boolean
-}
+// interface IProps {
+//     todos: {
+//         id: number;
+//         title: string;
+//         isComplete: boolean
+//     }[];
+//     owner: string;
+//     age: number;
+//     isDeveloper: boolean
+// }
 
 type TProps = {
     todos: {
