@@ -15,20 +15,25 @@ type TProps = {
         title: string;
         isComplete: boolean
     }[];
-    owner: string;
-    age: number;
-    isDeveloper: boolean
+    owner?: string;
+    age?: number;
+    isDeveloper?: boolean;
+
+    deleteTodo: (v: number) => void;
 }
 
-const TodoData = ({ todos, owner }: TProps) => {
-    // const { todos, owner } = props;
+const TodoData = (props: TProps) => {
+    const { todos, owner = "unknown", deleteTodo } = props;
     return (
         <div>
-            <div>owner = {owner}</div>
             {todos.map(item => {
                 return(
                     <div key={item.id}>
-                        <div>{item.title}</div>
+                        <div style={{padding: "10px 0"}}>{item.id} - {item.title}
+                            &nbsp; &nbsp; &nbsp;
+                            <button onClick={() => deleteTodo(item.id)}>Delete</button>
+                        </div>
+                        
                     </div>
                 )
             })}
